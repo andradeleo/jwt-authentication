@@ -4,7 +4,10 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"dev": "tsx watch src/bootstrap.ts"
+		"dev": "npm run services:up && npm run migrations:up && tsx watch src/bootstrap.ts",
+    "services:up": "docker compose up -d",
+    "services:down": "docker compose down",
+    "migrations:up": "npx prisma migrate dev"
 	},
 	"keywords": [],
 	"author": "",
