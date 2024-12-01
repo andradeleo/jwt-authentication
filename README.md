@@ -1,7 +1,7 @@
 
 # JWT Authentication
 
-Aplicação com autentição e autorização (RBAC) usando clean architecture.
+Aplicação com autenticação e autorização (RBAC) usando clean architecture.
 
 
 ## Installation
@@ -45,7 +45,7 @@ Aplicação com autentição e autorização (RBAC) usando clean architecture.
 #### Route
 
 ```ts
-app.get("/example-customer",
+app.get("/customer-example",
   middlewareAdapter(makeAuthenticationMiddleware()),
   middlewareAdapter(makeAuthorizationMiddleware(["ADMIN"])),
   routeAdapter(makeListCustomerController())
